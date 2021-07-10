@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import * as BearReact from './b-react';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+/** @jsx BearReact.createElement */
+const element = (
+    <div className='parent'>
+        <div className='child1'>
+            test
+        </div>
+        <div className='child2'>
+            <a href='https://github.com/northpbear'>link</a>
+        </div>
+    </div>
 );
+// 经过Babel翻译，element成为createElement返回的vDom
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+console.log('element::', element)
+
